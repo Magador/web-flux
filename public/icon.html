@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style type="text/css">
+    html, body {
+        height: 100%;
+        margin: 0;
+    }
+
+    body {
+        display: flex;
+        flex-flow: column nowrap;
+        align-content: stretch;
+    }
+
+    main {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        flex-grow: 1;
+    }
+
+    svg {
+        width: 400px;
+        height: 400px;
+    }
+
+    form {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+    }
+
+    label {
+        position: relative;
+        height: 50px;
+        width: 50px;
+        margin: 0;
+    }
+
+    label::before {
+        content: "";
+        box-sizing: border-box;
+        display: block;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        z-index: 1;
+        border: 2px solid white;
+        border-radius: 5px;
+        cursor: pointer;
+
+    }
+    label.checked::before {
+        border-color: black;
+    }
+    label.red::before {background-color: #F44336;}
+    label.pink::before {background-color: #E91E63;}
+    label.purple::before {background-color: #9C27B0;}
+    label.deep-purple::before {background-color: #673AB7;}
+    label.indigo::before {background-color: #3F51B5;}
+    label.blue::before {background-color: #2196F3;}
+    label.light-blue::before {background-color: #03A9F4;}
+    label.cyan::before {background-color: #00BCD4;}
+    label.teal::before {background-color: #009688;}
+    label.green::before {background-color: #4CAF50;}
+    label.light-green::before {background-color: #8BC34A;}
+    label.lime::before {background-color: #CDDC39;}
+    label.yellow::before {background-color: #FFEB3B;}
+    label.amber::before {background-color: #FFC107;}
+    label.orange::before {background-color: #FF9800;}
+    label.deep-orange::before {background-color: #FF5722;}
+    label.brown::before {background-color: #795548;}
+    label.grey::before {background-color: #9E9E9E;}
+    label.blue-grey::before {background-color: #607D8B;}
+
+    circle.red {fill: #F44336;}
+    circle.pink {fill: #E91E63;}
+    circle.purple {fill: #9C27B0;}
+    circle.deep-purple {fill: #673AB7;}
+    circle.indigo {fill: #3F51B5;}
+    circle.blue {fill: #2196F3;}
+    circle.light-blue {fill: #03A9F4;}
+    circle.cyan {fill: #00BCD4;}
+    circle.teal {fill: #009688;}
+    circle.green {fill: #4CAF50;}
+    circle.light-green {fill: #8BC34A;}
+    circle.lime {fill: #CDDC39;}
+    circle.yellow {fill: #FFEB3B;}
+    circle.amber {fill: #FFC107;}
+    circle.orange {fill: #FF9800;}
+    circle.deep-orange {fill: #FF5722;}
+    circle.brown {fill: #795548;}
+    circle.grey {fill: #9E9E9E;}
+    circle.blue-grey {fill: #607D8B;}
+
+    path.red {stroke: #F44336;}
+    path.pink {stroke: #E91E63;}
+    path.purple {stroke: #9C27B0;}
+    path.deep-purple {stroke: #673AB7;}
+    path.indigo {stroke: #3F51B5;}
+    path.blue {stroke: #2196F3;}
+    path.light-blue {stroke: #03A9F4;}
+    path.cyan {stroke: #00BCD4;}
+    path.teal {stroke: #009688;}
+    path.green {stroke: #4CAF50;}
+    path.light-green {stroke: #8BC34A;}
+    path.lime {stroke: #CDDC39;}
+    path.yellow {stroke: #FFEB3B;}
+    path.amber {stroke: #FFC107;}
+    path.orange {stroke: #FF9800;}
+    path.deep-orange {stroke: #FF5722;}
+    path.brown {stroke: #795548;}
+    path.grey {stroke: #9E9E9E;}
+    path.blue-grey {stroke: #607D8B;}
+    </style>
+    <title>Icon</title>
+</head>
+<body>
+    <nav>
+        <fieldset>
+            <legend>Border</legend>
+            <form name="border">
+                <label class="red"><input type="radio" name="color" /></label>
+                <label class="pink"><input type="radio" name="color" /></label>
+                <label class="purple"><input type="radio" name="color" /></label>
+                <label class="deep-purple"><input type="radio" name="color" /></label>
+                <label class="indigo"><input type="radio" name="color" /></label>
+                <label class="blue"><input type="radio" name="color" /></label>
+                <label class="light-blue"><input type="radio" name="color" /></label>
+                <label class="cyan"><input type="radio" name="color" /></label>
+                <label class="teal"><input type="radio" name="color" /></label>
+                <label class="green"><input type="radio" name="color" /></label>
+                <label class="light-green"><input type="radio" name="color" /></label>
+                <label class="lime"><input type="radio" name="color" /></label>
+                <label class="yellow"><input type="radio" name="color" /></label>
+                <label class="amber"><input type="radio" name="color" /></label>
+                <label class="orange"><input type="radio" name="color" /></label>
+                <label class="deep-orange"><input type="radio" name="color" /></label>
+                <label class="brown"><input type="radio" name="color" /></label>
+                <label class="grey"><input type="radio" name="color" /></label>
+                <label class="blue-grey"><input type="radio" name="color" /></label>
+            </form>
+        </fieldset>
+        <fieldset>
+            <legend>Waves</legend>
+            <form name="waves">
+                <label class="red"><input type="radio" name="color" /></label>
+                <label class="pink"><input type="radio" name="color" /></label>
+                <label class="purple"><input type="radio" name="color" /></label>
+                <label class="deep-purple"><input type="radio" name="color" /></label>
+                <label class="indigo"><input type="radio" name="color" /></label>
+                <label class="blue"><input type="radio" name="color" /></label>
+                <label class="light-blue"><input type="radio" name="color" /></label>
+                <label class="cyan"><input type="radio" name="color" /></label>
+                <label class="teal"><input type="radio" name="color" /></label>
+                <label class="green"><input type="radio" name="color" /></label>
+                <label class="light-green"><input type="radio" name="color" /></label>
+                <label class="lime"><input type="radio" name="color" /></label>
+                <label class="yellow"><input type="radio" name="color" /></label>
+                <label class="amber"><input type="radio" name="color" /></label>
+                <label class="orange"><input type="radio" name="color" /></label>
+                <label class="deep-orange"><input type="radio" name="color" /></label>
+                <label class="brown"><input type="radio" name="color" /></label>
+                <label class="grey"><input type="radio" name="color" /></label>
+                <label class="blue-grey"><input type="radio" name="color" /></label>
+            </form>
+        </fieldset>
+        <fieldset>
+            <legend>Dot</legend>
+            <form name="dot">
+                <label class="red"><input type="radio" name="color" /></label>
+                <label class="pink"><input type="radio" name="color" /></label>
+                <label class="purple"><input type="radio" name="color" /></label>
+                <label class="deep-purple"><input type="radio" name="color" /></label>
+                <label class="indigo"><input type="radio" name="color" /></label>
+                <label class="blue"><input type="radio" name="color" /></label>
+                <label class="light-blue"><input type="radio" name="color" /></label>
+                <label class="cyan"><input type="radio" name="color" /></label>
+                <label class="teal"><input type="radio" name="color" /></label>
+                <label class="green"><input type="radio" name="color" /></label>
+                <label class="light-green"><input type="radio" name="color" /></label>
+                <label class="lime"><input type="radio" name="color" /></label>
+                <label class="yellow"><input type="radio" name="color" /></label>
+                <label class="amber"><input type="radio" name="color" /></label>
+                <label class="orange"><input type="radio" name="color" /></label>
+                <label class="deep-orange"><input type="radio" name="color" /></label>
+                <label class="brown"><input type="radio" name="color" /></label>
+                <label class="grey"><input type="radio" name="color" /></label>
+                <label class="blue-grey"><input type="radio" name="color" /></label>
+            </form>
+        </fieldset>
+    </nav>
+    <main>
+        <svg viewBox="0 0 16 16" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
+            <path id="border" class="" d="M3,1h10a2,2 0 0,1 2,2v10a2,2 0 0,1 -2,2h-10a2,2 0 0,1 -2,-2v-10a2,2 0 0,1 2,-2z" stroke="black" stroke-width="2" fill="none" />
+            <path id="waves" class="" d="M3,4a9,9 0 0,1 9,9M3,8a5,5 0 0,1 5,5" stroke="black" stroke-width="2" fill="none"/>
+            <circle id="dot" class="" cx="4" cy="12" r="1" fill="black" />
+        </svg>
+    </main>
+    <script type="text/javascript" src="javascripts/icon.old.js"></script>
+</body>
+</html>
