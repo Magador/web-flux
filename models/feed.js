@@ -1,4 +1,8 @@
 
 var mongoose = require('mongoose');
 
-module.exports = 
+module.exports = mongoose.model('Feed', {
+	type: String,
+	title: String,
+	
+})
