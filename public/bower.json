@@ -1,0 +1,39 @@
+{
+  "name": "web-flux",
+  "homepage": "https://github.com/Magador/web-flux",
+  "authors": [
+    "Jean-Baptiste Lenglet <jbaptiste.lenglet+git@gmail.com>"
+  ],
+  "description": "A RSS agregator using Polymer as a Progressive Web App",
+  "main": "index.html",
+  "moduleType": [],
+  "keywords": [
+    "polymer",
+    "rss",
+    "atom",
+    "web",
+    "feed",
+    "offline",
+    "push",
+    "notifications"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "polymer": "Polymer/polymer#^1.2.0",
+    "paper-header-panel": "PolymerElements/paper-header-panel#~1.1.2",
+    "paper-toolbar": "PolymerElements/paper-toolbar#~1.1.2",
+    "paper-drawer-panel": "PolymerElements/paper-drawer-panel#~1.0.6",
+    "paper-icon-button": "PolymerElements/paper-icon-button#~1.0.6",
+    "paper-tabs": "PolymerElements/paper-tabs#~1.2.5",
+    "iron-icons": "PolymerElements/iron-icons#~1.1.2",
+    "iron-flex-layout": "PolymerElements/iron-flex-layout#~1.2.2"
+  }
+}
