@@ -17,8 +17,7 @@ bower install
 
 Start the mongo daemon
 ```
-cd /path/to/project/db
-mongod -f config.yaml --logpath mongod.log --dbpath data
+/path/to/project/db/dbstart
 ```
 
 Start the app
