@@ -34,3 +34,7 @@ certs
 
 # Bower components directory
 public/bower_components
+
+# Database directory
+db/data
+db/mongod.log
