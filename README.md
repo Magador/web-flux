@@ -13,6 +13,11 @@ cd public
 bower install
 ```
 
+Create a empty data directory for MongoDB
+```
+mkdir /path/to/project/db/data
+```
+
 ## Start-up
 
 Start the mongo daemon
