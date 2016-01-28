@@ -30,6 +30,19 @@ server.listen(port);
 server.on('error', onError);
 server.on('listening', onListening);
 
+
+/**
+ * Add TLS Session resumption support
+ */
+var tlsSessionStore = {};
+server.on('newSession', (id, data, cb) => {
+  tlsSessionStore[id.toString('hex')] = data;
+  cb();
+});
+server.on('resumeSession', (id, cb) => {
+  cb(null, tlsSessionStore[id.toString('hex')] || null);
+});
+
 /**
  * Normalize a port into a number, string, or false.
  */
