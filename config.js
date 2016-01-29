@@ -11,11 +11,8 @@ module.exports = {
   env: "dev",
   db: {
     dev: {
-      protocol: 'mongodb',
-      slashes: true,
-      hostname: 'jblenglet.org.uk',
-      port: 28000,
-      pathname: 'webflux'
+      dbPath: "mongodb://localhost:28000/webflux",
+      salt: '105cef7a44452de59d2d9ad7a280a67744727964'
     },
     prod: {
 

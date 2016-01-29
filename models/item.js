@@ -1,9 +1,11 @@
 const mongoose = require('mongoose');
 
-module.exports = mongoose.model("Item", {
+const itemSchema = new mongoose.Schema({
   title: String,
   content: String,
   link: String,
   author: String,
   updated: Date
 });
+
+module.exports = mongoose.model('Item', itemSchema);

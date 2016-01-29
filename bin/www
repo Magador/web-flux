@@ -5,15 +5,31 @@
  */
 
 var app = require('../app');
-var debug = require('debug')('web-flux:server');
+var colors = require('colors');
 var https = require('https');
+const mongoose = require('mongoose');
 const config = require('../config');
+
+/**
+ * Setup database connection
+ */
+
+mongoose.connect(config.db[config.env].dbPath, {
+  server: {
+    socketOptions: {
+      keepAlive: true
+    }
+  }
+});
+
+mongoose.connection.on('error', (err) => console.error(err.toString().red));
+mongoose.connection.once('open', () => console.log("Successfully connected to MongoDB !".green));
 
 /**
  * Get port from environment and store in Express.
  */
 
-var port = normalizePort(config.server.port || '80');
+var port = normalizePort(config.server.port || 8000);
 app.set('port', port);
 
 /**
@@ -79,11 +95,11 @@ function onError(error) {
   // handle specific listen errors with friendly messages
   switch (error.code) {
     case 'EACCES':
-      console.error(bind + ' requires elevated privileges');
+      console.error(bind + ' requires elevated privileges'.red);
       process.exit(1);
       break;
     case 'EADDRINUSE':
-      console.error(bind + ' is already in use');
+      console.error(bind + ' is already in use'.red);
       process.exit(1);
       break;
     default:
@@ -100,5 +116,5 @@ function onListening() {
   var bind = typeof addr === 'string'
     ? 'pipe ' + addr
     : 'port ' + addr.port;
-  debug('Listening on ' + bind);
+  console.log(('Listening on ' + bind).green);
 }
