@@ -1,5 +1,4 @@
-
-var mongoose = require('mongoose');
+const mongoose = require('mongoose');
 
 module.exports = mongoose.model("Feed", {
   type: String,
@@ -8,5 +7,5 @@ module.exports = mongoose.model("Feed", {
   link: String,
   update: Date,
   author: String,
-  items: [Schema.Types.ObjectId]
+  items: [mongoose.Schema.Types.ObjectId]
 });
