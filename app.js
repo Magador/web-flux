@@ -31,6 +31,7 @@ app.use(session({
   name: "wfid",
   resave: false,
   rolling: true,
+  unset: 'destroy',
   cookie: {secure: true}
 }));
 app.use(express.static(path.join(__dirname, 'public')));

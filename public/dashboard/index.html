@@ -8,6 +8,9 @@
     <link rel="import" href="/bower_components/paper-header-panel/paper-header-panel.html">
     <link rel="import" href="/bower_components/paper-toolbar/paper-toolbar.html">
     <link rel="import" href="/bower_components/paper-icon-button/paper-icon-button.html">
+    <link rel="import" href="/bower_components/paper-button/paper-button.html">
+    <link rel="import" href="/bower_components/paper-card/paper-card.html">
+    <link rel="import" href="/bower_components/paper-input/paper-input.html">
     <link rel="import" href="/bower_components/iron-icons/iron-icons.html">
 
     <link rel="import" href="/bower_components/iron-flex-layout/iron-flex-layout.html">
@@ -23,6 +26,15 @@
       .fullbleed {
         @apply(--layout-fullbleed);
       }
+
+      .flex {
+        @apply(--layout-flex);
+      }
+
+      .container {
+        @apply(--layout-horizontal);
+        @apply(--layout-center-justified);
+      }
     </style>
   </head>
   <body class="fullbleed vertical layout">
@@ -32,7 +44,17 @@
         <span class="flex"></span>
         <paper-icon-button icon="search"></paper-icon-button>
       </paper-toolbar>
-      <div>Content goes here...</div>
+      <div class="container">
+        <paper-card heading="Form" image="" elevation="1" animated-shadow="false">
+          <div class="card-content">
+            <paper-input label="Username"></paper-input>
+            <paper-input label="Password" type="password"></paper-input>
+          </div>
+          <div class="card-actions">
+            <paper-button>Submit</paper-button>
+          </div>
+        </paper-card>
+      </div>
     </paper-header-panel>
   </body>
 </html>

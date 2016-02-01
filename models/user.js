@@ -31,7 +31,11 @@ const userSchema = new mongoose.Schema({
 });
 
 userSchema.statics.getAuth = function(name, pass, cb) {
-  return this.find({username: name, password: hashPassword(pass)}, cb);
+  return this.findOne({username: name, password: hashPassword(pass)}, cb);
+}
+
+userSchema.statics.checkName = function(name, cb) {
+  return this.findOne({username: name}, (err, user) => {cb(err, user.length? false: true)});
 }
 
 module.exports = mongoose.model("User", userSchema);
