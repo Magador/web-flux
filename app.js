@@ -37,7 +37,10 @@ app.use(session({
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', homepage);
-app.use('/auth', auth)
+app.use('/auth', auth);
+
+console.log(auth);
+
 app.use('/api', api);
 
 // catch 404 and forward to error handler

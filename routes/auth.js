@@ -20,12 +20,14 @@ function signIn(req, res) {
 
   User.getAuth(username, password, (err, user) => {
     if(err) {
-      console.error(JSON.stringify(err, 2).red);
+      console.log(JSON.stringify(err, 2).red);
       return res.sendStatus(500);
     }
     if(user) {
       req.session.authentificated = true;
-      return res.status(202).send({user.username, user.feeds, user.email});
+      let feeds = user.feeds;
+      let email = user.email;
+      return res.status(202).send({username, feeds, email});
     }
     res.sendStatus(401);
   });
@@ -41,7 +43,7 @@ function signUp(req, res) {
       console.error(JSON.stringify(err, 2).red);
       return res.sendStatus(500);
     }
-    if(!avail) return res.status(204).json("Username not available");
+    if(!avail) return res.status(204).json("Unavailable");
     let newUser = new User({username, email, password});
     newUser.save((err, user) => {
       if(err) {
@@ -52,9 +54,8 @@ function signUp(req, res) {
       let feeds = user.feeds,
           username = user.username,
           email = user.email;
-      res.status(201).send({feeds, username, email});
-    })
-    res.status(avail? 202: 204).send(avail? 'Available': 'Unavailable');
+      res.status(201).json({feeds, username, email});
+    });
   });
 }
 
@@ -70,5 +71,3 @@ function signOut(req, res) {
   else
     res.sendStatus(200);
 }
-
-
