@@ -35,7 +35,7 @@ userSchema.statics.getAuth = function(name, pass, cb) {
 }
 
 userSchema.statics.checkName = function(name, cb) {
-  return this.findOne({username: name}, (err, user) => {cb(err, user.length? false: true)});
+  return this.findOne({username: name}, (err, user) => {cb(err, user? false: true)});
 }
 
 module.exports = mongoose.model("User", userSchema);

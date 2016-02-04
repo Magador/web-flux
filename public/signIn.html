@@ -1,24 +1,23 @@
+<!DOCTYPE html>
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<meta name="author" content="Pauline KIM">
 		<title>Sign In</title>
 	</head>
-
 	<body>
+    <h1>Sign in</h1>
 		<form>
-			<label name="label_username" for="username">Username : 
+			<label>
+				Username :
+				<input name="username" type="text" />
 			</label>
-			<input name="username" id="username" type="text">
-			</input>
-			<pre></pre>
-			<label name="label_password" for="password">Password : 
+			<label>
+				Password :
+				<input name="password" type="password" />
 			</label>
-			<input name="password" id="password" type="text">
-			</input>
-			<br></br>
-			<input name="valid" id="valid" type="submit" value="Submit">
+			<button name="signin">Sign in</button>
 		</form>
+    <span id="error-messages"></span>
 		<script src="/bower_components/aja/aja.min.js"></script>
 		<script src="/scripts/signin.js"></script>
 	</body>

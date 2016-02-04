@@ -3,6 +3,7 @@ var button = form.signup;
 
 button.addEventListener('click', function(e) {
   e.stopPropagation();
+  e.preventDefault();
 
   aja()
     .method('post')

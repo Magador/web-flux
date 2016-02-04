@@ -16,7 +16,7 @@ function signIn(req, res) {
   let username = req.body.username || '',
       password = req.body.password || '';
 
-  if(req.session.authentificated) next();
+  // if(req.session.authentificated) next();
 
   User.getAuth(username, password, (err, user) => {
     if(err) {
@@ -34,16 +34,20 @@ function signIn(req, res) {
 }
 
 function signUp(req, res) {
+
   let username = req.body.username || "",
       email = req.body.email || "",
       password = req.body.password || "";
 
   User.checkName(username, (err, avail) => {
+
+    console.log(err, avail);
+
     if(err) {
       console.error(JSON.stringify(err, 2).red);
       return res.sendStatus(500);
     }
-    if(!avail) return res.status(204).json("Unavailable");
+    if(!avail) return res.sendStatus(204);
     let newUser = new User({username, email, password});
     newUser.save((err, user) => {
       if(err) {
@@ -61,13 +65,13 @@ function signUp(req, res) {
 
 function signOut(req, res) {
   if(req.session.authentificated)
-    req.session.store.destroy(req.session.id, (err) => {
-      if(err) {
-        return console.error(err);
-      }
+    // req.session.store.destroy(req.session.id, (err) => {
+    //   if(err) {
+    //     return console.log(err);
+    //   }
       delete req.session;
-      res.sendStatus(200);
-    });
-  else
+    //   res.sendStatus(200);
+  //   });
+  // else
     res.sendStatus(200);
 }
