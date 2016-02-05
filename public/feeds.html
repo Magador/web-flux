@@ -3,10 +3,19 @@
   <head>
     <meta charset="utf-8">
     <title>Feeds</title>
+    <link rel="stylesheet" href="/stylesheets/feeds.css" />
   </head>
   <body>
-    <h1>Feeds</h1>
-    <button id="signout" type="button">Sign out</button>
+    <nav>
+      <h1>Feeds</h1>
+      <div>
+        <input type="url" id="addFeed" />
+        <button type="button" id="addFeedButton">Add Feed</button>
+      </div>
+      <button id="signout" type="button">Sign out</button>
+    </nav>
+    <main>
+    </main>
 		<script src="/bower_components/aja/aja.min.js"></script>
     <script src="/scripts/feeds.js"></script>
   </body>
