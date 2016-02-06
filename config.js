@@ -2,7 +2,7 @@ const fs = require('fs');
 
 module.exports = {
   server: {
-    port: 8000,
+    port: 443,
     https: {
       key: fs.readFileSync('certs/webflux.key'),
       cert: fs.readFileSync('certs/webflux.crt')

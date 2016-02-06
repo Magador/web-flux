@@ -2,24 +2,22 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>Sign Up</title>
+		<title>Sign Up</title><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic,500,500italic,700,700italic">
 	</head>
-	<body>
+	<body style="text-align: center;font-family:Roboto">
+    <img src="/icon/favicon-colored.png" width="200px"/>
     <h1>Sign up</h1>
     <form>
     	<label>
-        Username :
-    	  <input type="text" name="username" />
-      </label>
+    	  <input type="text" name="username" placeholder="Username"/>
+      </label><br/><br/>
       <label>
-        Email :
-    	  <input type="email" name="email" />
-      </label>
+    	  <input type="email" name="email" placeholder="Email"/>
+      </label><br/><br/>
       <label>
-        Password :
-    	  <input type="password" name="password" />
-      </label>
-    	<button name="signup">Sign up</button>
+    	  <input type="password" name="password" placeholder="Password"/>
+      </label><br/><br/>
+    	<button name="signup">Let's go!</button>
     </form>
     <span id="error-messages"></span>
 		<script src="/bower_components/aja/aja.min.js"></script>

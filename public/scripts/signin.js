@@ -1,9 +1,9 @@
-var form = document.forms[0];
-var button = form.signin;
+var form = document.forms[0],
+    button = form.signin;
 
-button.addEventListener('click', function(e) {
-  e.stopPropagation();
-  e.preventDefault();
+button.addEventListener('click', function(event) {
+  event.preventDefault();
+
 
   aja()
     .method('post')
@@ -19,5 +19,4 @@ button.addEventListener('click', function(e) {
       document.location = "/feeds.html";
     })
     .go();
-
 });
